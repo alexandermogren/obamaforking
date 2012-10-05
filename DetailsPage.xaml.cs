@@ -34,10 +34,13 @@ namespace RCmechanics
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             
-            if (NavigationContext.QueryString.TryGetValue("selectedItem", out selectedIndex))
+            if (NavigationContext.QueryString.TryGetValue("itemId", out selectedIndex))
             {
-                int index = int.Parse(selectedIndex);
-                DataContext = App.ViewModel.AllToDoItems[index];
+                //int index = int.Parse(selectedIndex);
+                //DataContext = App.ViewModel.AllToDoItems[index];
+
+                int id = int.Parse(selectedIndex);
+                DataContext = GetById(id);
             }
 
             if (NavigationContext.QueryString.TryGetValue("selectedItemFavorite", out selectedIndexFavorite)) 

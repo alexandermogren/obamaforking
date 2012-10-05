@@ -109,10 +109,16 @@ namespace RCmechanics
 
         private void allToDoItemsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (allToDoItemsListBox.SelectedIndex == -1)
-                return;
-            NavigationService.Navigate(new Uri("/DetailsPage.xaml?selectedItem=" + allToDoItemsListBox.SelectedIndex, UriKind.Relative));
-            allToDoItemsListBox.SelectedIndex = -1;
+            var item = allToDoItemsListBox.SelectedItem as ToDoItem;
+            if (item != null) 
+            {
+                var itemId = item.ToDoItemId;
+                NavigationService.Navigate(new Uri("/DetailsPage.xaml?itemId" + itemId, UriKind.Relative));
+            }
+            //if (allToDoItemsListBox.SelectedIndex == -1)
+                //return;
+            //NavigationService.Navigate(new Uri("/DetailsPage.xaml?selectedItem=" + allToDoItemsListBox.SelectedIndex, UriKind.Relative));
+            //allToDoItemsListBox.SelectedIndex = -1;
         }
 
         private void ApplicationBarMenuItem_Click_1(object sender, EventArgs e)
@@ -371,6 +377,25 @@ namespace RCmechanics
         private void ApplicationBarMenuItem_Click(object sender, EventArgs e)
         {
             NavigationService.Navigate(new Uri("/settings.xaml", UriKind.Relative));
+        }
+
+        private void deleteTaskButtonresult_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult m = MessageBox.Show("This setup sheet, plus any information it contains, will be deleted.", "Delete this sheet?", MessageBoxButton.OKCancel);
+
+            if (m == MessageBoxResult.OK)
+            {
+                var button = sender as Button;
+
+                if (button != null)
+                {
+                    // Get a handle for the to-do item bound to the button.
+                    ToDoItem toDoForDeleteSR = button.DataContext as ToDoItem;
+                    App.ViewModel.DeleteToDoItemSR(toDoForDeleteSR);
+                    //App.ViewModel.DeleteToDoItem(toDoForDelete);
+                }
+                this.Focus();
+            }
         }
     }
 }
