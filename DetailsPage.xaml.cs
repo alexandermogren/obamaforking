@@ -36,9 +36,6 @@ namespace RCmechanics
             
             if (NavigationContext.QueryString.TryGetValue("itemId", out selectedIndex))
             {
-                //int index = int.Parse(selectedIndex);
-                //DataContext = App.ViewModel.AllToDoItems[index];
-
                 int id = int.Parse(selectedIndex);
                 DataContext = GetById(id);
             }
@@ -103,7 +100,8 @@ namespace RCmechanics
         
         private void ApplicationBarIconButton_Click(object sender, EventArgs e)
         {
-            NavigationService.Navigate(new Uri("/EditSheet.xaml?selectedItem=" + selectedIndex, UriKind.Relative));
+            string selectedID = ID.Text;
+            NavigationService.Navigate(new Uri("/EditSheet.xaml?selectedItem=" + selectedID, UriKind.Relative));
         }
 
         private void ApplicationBarIconButton_Click_1(object sender, EventArgs e)
