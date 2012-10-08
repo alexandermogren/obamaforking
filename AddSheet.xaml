@@ -1,0 +1,433 @@
+﻿<phone:PhoneApplicationPage 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+	xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+	xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="728"
+	x:Class="RCmechanics.AddSheet"
+	FontFamily="{StaticResource PhoneFontFamilyNormal}"
+	FontSize="{StaticResource PhoneFontSizeNormal}"
+	Foreground="{StaticResource PhoneForegroundBrush}"
+	SupportedOrientations="Portrait" Orientation="Portrait"
+	shell:SystemTray.IsVisible="False"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
+    <phone:PhoneApplicationPage.Resources>
+	</phone:PhoneApplicationPage.Resources>
+
+	<!--LayoutRoot is the root grid where all page content is placed-->
+	<Grid x:Name="LayoutRoot" Height="800">
+        <Grid.Resources>
+            
+            <DataTemplate x:Name="PickerItemTemplate">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Springs}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerFullModeItemTemplate">
+                <StackPanel Orientation="Horizontal" Margin="16 21 0 20">
+                    <TextBlock Text="{Binding Springs}" Margin="16 0 0 0" FontSize="43" FontFamily="{StaticResource PhoneFontFamilyLight}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerItemTemplateBrandComp">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding brandcomp}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerFullModeItemTemplateBrandComp">
+                <StackPanel Orientation="Horizontal" Margin="16 21 0 20">
+                    <TextBlock Text="{Binding brandcomp}" Margin="16 0 0 0" FontSize="43" FontFamily="{StaticResource PhoneFontFamilyLight}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerItemTemplate2">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Casters}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerItemTC">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding TrackS}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerItemTC2">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding TrackT}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerItemTC3">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding TrackC}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerFullModeItemTemplate2">
+                <StackPanel Orientation="Horizontal" Margin="16 21 0 20">
+                    <TextBlock Text="{Binding Casters}" Margin="16 0 0 0" FontSize="43" FontFamily="{StaticResource PhoneFontFamilyLight}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerItemTemplate3">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding reCasters}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerFullModeItemTemplate3">
+                <StackPanel Orientation="Horizontal" Margin="16 21 0 20">
+                    <TextBlock Text="{Binding reCasters}" Margin="16 0 0 0" FontSize="43" FontFamily="{StaticResource PhoneFontFamilyLight}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerItemTemplate4">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Cambers}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerFullModeItemTemplate4">
+                <StackPanel Orientation="Horizontal" Margin="16 21 0 20">
+                    <TextBlock Text="{Binding Cambers}" Margin="16 0 0 0" FontSize="43" FontFamily="{StaticResource PhoneFontFamilyLight}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerItemTemplate5">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Rideheights}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerFullModeItemTemplate5">
+                <StackPanel Orientation="Horizontal" Margin="16 21 0 20">
+                    <TextBlock Text="{Binding Rideheights}" Margin="16 0 0 0" FontSize="43" FontFamily="{StaticResource PhoneFontFamilyLight}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerItemTemplate6">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding FStudsplacement}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerFullModeItemTemplate6">
+                <StackPanel Orientation="Horizontal" Margin="16 21 0 20">
+                    <TextBlock Text="{Binding FStudsplacement}" Margin="16 0 0 0" FontSize="43" FontFamily="{StaticResource PhoneFontFamilyLight}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerItemTemplate7">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding RStudsplacement}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerFullModeItemTemplate7">
+                <StackPanel Orientation="Horizontal" Margin="16 21 0 20">
+                    <TextBlock Text="{Binding RStudsplacement}" Margin="16 0 0 0" FontSize="43" FontFamily="{StaticResource PhoneFontFamilyLight}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerItemTemplate8">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding TDroops}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerFullModeItemTemplate8">
+                <StackPanel Orientation="Horizontal" Margin="16 21 0 20">
+                    <TextBlock Text="{Binding TDroops}" Margin="16 0 0 0" FontSize="43" FontFamily="{StaticResource PhoneFontFamilyLight}"/>
+                </StackPanel>
+            </DataTemplate>
+			            <DataTemplate x:Name="PickerItemTemplate9">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Toeinout}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerFullModeItemTemplate9">
+                <StackPanel Orientation="Horizontal" Margin="16 21 0 20">
+                    <TextBlock Text="{Binding Toeinout}" Margin="16 0 0 0" FontSize="43" FontFamily="{StaticResource PhoneFontFamilyLight}"/>
+                </StackPanel>
+            </DataTemplate>
+			            <DataTemplate x:Name="PickerItemTemplateTime">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Time}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerFullModeItemTemplateTime">
+                <StackPanel Orientation="Horizontal" Margin="16 21 0 20">
+                    <TextBlock Text="{Binding Time}" Margin="16 0 0 0" FontSize="43" FontFamily="{StaticResource PhoneFontFamilyLight}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerItemTemplate11">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding KingpinG}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerFullModeItemTemplate11">
+                <StackPanel Orientation="Horizontal" Margin="16 21 0 20">
+                    <TextBlock Text="{Binding KingpinG}" Margin="16 0 0 0" FontSize="43" FontFamily="{StaticResource PhoneFontFamilyLight}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerItemTemplateShock">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding ShockOil}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerFullModeItemTemplateShock">
+                <StackPanel Orientation="Horizontal" Margin="16 21 0 20">
+                    <TextBlock Text="{Binding ShockOil}" Margin="16 0 0 0" FontSize="43" FontFamily="{StaticResource PhoneFontFamilyLight}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerItemTemplateShockspring">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding shockspring}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerFullModeItemTemplateShockspring">
+                <StackPanel Orientation="Horizontal" Margin="16 21 0 20">
+                    <TextBlock Text="{Binding shockspring}" Margin="16 0 0 0" FontSize="43" FontFamily="{StaticResource PhoneFontFamilyLight}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerItemTemplateCountry">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Country}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerFullModeItemTemplateCountry">
+                <StackPanel Orientation="Horizontal" Margin="16 21 0 20">
+                    <TextBlock Text="{Binding Country}" Margin="16 0 0 0" FontSize="43" FontFamily="{StaticResource PhoneFontFamilyLight}"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Name="PickerItemTemplateBump">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Bumpsteer}"/>
+                </StackPanel>
+            </DataTemplate>
+        </Grid.Resources>
+		<!--Pivot Control-->
+		<controls:Pivot Name="pivots" Margin="0,-2,0,2">
+			<!--Pivot item one-->
+			<controls:PivotItem x:Name="driverlocation">
+				<controls:PivotItem.Header>
+					<TextBlock Text="Driver location" FontSize="50" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Foreground="{StaticResource PhoneAccentBrush}" Margin="2,28,12,0"/>
+				</controls:PivotItem.Header>
+				<Grid>
+                    <ScrollViewer>
+                    <StackPanel>
+					<TextBlock HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="Driver" VerticalAlignment="Top" Width="78" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF"/>
+                        <TextBox x:Name="driver" Height="73" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="{x:Null}" />
+                        <TextBlock HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="City" VerticalAlignment="Top" Width="78" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF"/>
+					<TextBox x:Name="city" Height="73" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="{x:Null}" />
+                    <TextBlock HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="Country" VerticalAlignment="Top" Width="103" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                        <toolkit:ListPicker x:Name="countryPicker" ItemTemplate="{StaticResource PickerItemTemplateCountry}" FullModeItemTemplate="{StaticResource PickerFullModeItemTemplateCountry}" FullModeHeader="Country" CacheMode="BitmapCache" />
+                        <TextBlock Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Text="Event" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                    <TextBox x:Name="eventType" Height="73" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1" BorderBrush="{x:Null}" />
+                    <TextBlock Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Text="Date" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF"/>
+                    <toolkit:DatePicker Name="eventDate" BorderThickness="1" BorderBrush="Black" />
+                    </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+			
+			</controls:PivotItem>
+<!--Pivot item one-->
+			<controls:PivotItem Height="610" VerticalAlignment="Top" x:Name="frontend">
+				<controls:PivotItem.Header>
+					<TextBlock Text="Front end" Foreground="{StaticResource PhoneAccentBrush}" FontSize="50" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Margin="2,28,12,0"/>
+				</controls:PivotItem.Header>
+				<Grid>
+                    <ScrollViewer>
+                        <StackPanel>
+                            <TextBlock x:Name="spring" Text="Spring" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <TextBlock Text="{Binding Path=Value, Mode=TwoWay, Converter={StaticResource StringFormatConverter}, ElementName=springslider}" Margin="300,-21,0,0" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" x:Name="springData" />
+                            <Slider Name="springslider" Background="{StaticResource PhoneAccentBrush}" Maximum="1" Minimum="0" SmallChange="5" />
+                        <TextBlock x:Name="caster" TextWrapping="Wrap" Text="Caster" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <TextBlock Text="{Binding Path=Value, Mode=TwoWay,StringFormat='0.0 degrees', ElementName=casterslider}" Margin="300,-21,0,0" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" x:Name="casterData" />
+                            <Slider Name="casterslider" Background="{StaticResource PhoneAccentBrush}" Maximum="10" Minimum="0" SmallChange="5" />
+                            <TextBlock x:Name="reactivecaster" TextWrapping="Wrap" Text="Reactive caster" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <TextBlock Text="{Binding Path=Value, Mode=TwoWay,StringFormat='0.0 mm', ElementName=recasterslider}" Margin="300,-21,0,0" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" x:Name="recasterData" />
+                            <Slider Name="recasterslider" Background="{StaticResource PhoneAccentBrush}" Maximum="5" Minimum="0" SmallChange="0.1" />
+                            <TextBlock x:Name="camber" TextWrapping="Wrap" Text="Camber" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <TextBlock Text="{Binding Path=Value, Mode=TwoWay,StringFormat='0.0 degrees', ElementName=camberslider}" Margin="300,-21,0,0" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" x:Name="camberData" />
+                            <Slider Name="camberslider" Background="{StaticResource PhoneAccentBrush}" Maximum="10" Minimum="0" SmallChange="0.5" />
+                        <TextBlock x:Name="rideheight" TextWrapping="Wrap" Text="Ride height" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <TextBlock Text="{Binding Path=Value, Mode=TwoWay,StringFormat='0.0 mm', ElementName=ridehslider}" Margin="300,-21,0,0" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" x:Name="ridehData" />
+                            <Slider Name="ridehslider" Background="{StaticResource PhoneAccentBrush}" Maximum="10" Minimum="0" SmallChange="0.1" />
+                            <TextBlock TextWrapping="Wrap" Text="Car width" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <TextBlock Text="{Binding Path=Value, Mode=TwoWay,StringFormat='00.0 mm', ElementName=carwslider}" Margin="300,-21,0,0" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" x:Name="carwData" />
+                            <Slider Name="carwslider" Background="{StaticResource PhoneAccentBrush}" Maximum="180" Minimum="100" SmallChange="0.5" />
+                            <TextBlock TextWrapping="Wrap" Text="Droop" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <TextBlock Text="{Binding Path=Value, Mode=TwoWay,StringFormat='0.0 mm', ElementName=droopslider}" Margin="300,-21,0,0" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" x:Name="droopData" />
+                            <Slider Name="droopslider" Background="{StaticResource PhoneAccentBrush}" Maximum="10" Minimum="0" SmallChange="0.5" />
+                            <TextBlock x:Name="bumpsteer" TextWrapping="Wrap" Text="Bumpsteer" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <toolkit:ListPicker x:Name="bumpsteerPicker" ItemTemplate="{StaticResource PickerItemTemplateBump}"/>
+                            <TextBlock HorizontalAlignment="Left" Text="Front ball studs and placement" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+							<toolkit:ListPicker x:Name="FstudsPicker" CacheMode="BitmapCache" FullModeHeader="Front ball studs + placement" FullModeItemTemplate="{StaticResource PickerFullModeItemTemplate6}" ItemTemplate="{StaticResource PickerItemTemplate6}" />
+							<TextBlock Text="Rear ball studs and placement" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+							<toolkit:ListPicker x:Name="RstudsPicker" CacheMode="BitmapCache" FullModeHeader="Rear ball studs + placement" FullModeItemTemplate="{StaticResource PickerFullModeItemTemplate7}" ItemTemplate="{StaticResource PickerItemTemplate7}" />
+							<TextBlock TextWrapping="Wrap" Text="Toe in/out" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <toolkit:ListPicker x:Name="ToePicker" CacheMode="BitmapCache" FullModeHeader="Toe in / out" FullModeItemTemplate="{StaticResource PickerFullModeItemTemplate9}" ItemTemplate="{StaticResource PickerItemTemplate9}" />
+                            <TextBlock FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Text="Kingpin grease" TextWrapping="Wrap" VerticalAlignment="Top" />
+                            <toolkit:ListPicker x:Name="KingpinGPicker" CacheMode="BitmapCache" FullModeHeader="Kingpin grease" FullModeItemTemplate="{StaticResource PickerFullModeItemTemplate11}" ItemTemplate="{StaticResource PickerItemTemplate11}" />
+					</StackPanel>
+                    </ScrollViewer>
+                </Grid>
+			</controls:PivotItem>
+
+<!--Pivot item two-->
+			<controls:PivotItem x:Name="fonttires">
+				<controls:PivotItem.Header>
+					<TextBlock Text="Front tires" Foreground="{StaticResource PhoneAccentBrush}" FontSize="50" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Margin="2,28,12,0"/>
+				</controls:PivotItem.Header>
+                <Grid>
+                    <ScrollViewer>
+                    <StackPanel>
+                                <TextBlock Height="24" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Text="Brand &amp; Comp" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                                <toolkit:ListPicker x:Name="BrandCompPickerFront" CacheMode="BitmapCache" FullModeHeader="Brand &amp; Comp" FullModeItemTemplate="{StaticResource PickerFullModeItemTemplateBrandComp}" ItemTemplate="{StaticResource PickerItemTemplateBrandComp}" Height="73"/>
+                                <TextBlock Height="24" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Text="Diameter" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                        <TextBlock x:Name="DiaFront" Text="{Binding Path=Value, Mode=TwoWay,StringFormat='0.0 mm', ElementName=sliderfront}" Margin="300,-25,0,0"/>
+                                <Slider Name="sliderfront" Background="{StaticResource PhoneAccentBrush}" Maximum="48" SmallChange="0.5" Minimum="42" />
+                        <TextBlock Text="Tire Treatment" Foreground="{StaticResource PhoneAccentBrush}" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Height="24"/>
+                        <TextBlock Text="Time" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Height="24"/>
+                        <toolkit:ListPicker x:Name="tireTimePickerfront" FullModeHeader="Time" FullModeItemTemplate="{StaticResource PickerFullModeItemTemplateTime}" ItemTemplate="{StaticResource PickerItemTemplateTime}"/>
+                        <TextBlock Text="Product brand" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Height="24"/>
+                        <TextBox x:Name="productbrandfront"/>
+                        <TextBlock Text="Surface" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Height="24"/>
+                        <Slider x:Name="Surfacefront" Background="{StaticResource PhoneAccentBrush}"/>
+                    </StackPanel>
+                    </ScrollViewer>
+                        </Grid>
+                               
+            </controls:PivotItem>
+			<controls:PivotItem x:Name="rearend">
+				<controls:PivotItem.Header>
+					<TextBlock Text="Rear end" Foreground="{StaticResource PhoneAccentBrush}" FontSize="50" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Margin="2,28,12,0"/>
+				</controls:PivotItem.Header>
+				<Grid>
+                    <ScrollViewer Margin="0,0,0,71">
+					<StackPanel>
+                        <TextBlock Text="Shock oil" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF"/>
+                        <toolkit:ListPicker x:Name="shockoilPicker" FullModeHeader="Shock oil" FullModeItemTemplate="{StaticResource PickerFullModeItemTemplateShock}" ItemTemplate="{StaticResource PickerItemTemplateShock}"/>
+                        <TextBlock Text="Damper grease" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF"/>
+                        <toolkit:ListPicker x:Name="DamperGreaseRearEnd" FullModeHeader="Damper grease" FullModeItemTemplate="{StaticResource PickerFullModeItemTemplate11}" ItemTemplate="{StaticResource PickerItemTemplate11}" />
+                        <TextBlock Text="Car width" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF"/>
+                        <TextBlock Text="{Binding Path=Value, Mode=TwoWay,StringFormat='00.0 mm', ElementName=carwsliderrearend}" Margin="300,-21,0,0" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" x:Name="carwDataRearEnd" />
+                        <Slider Name="carwsliderrearend" Background="{StaticResource PhoneAccentBrush}" Maximum="180" Minimum="100" SmallChange="0.5" />
+                        <TextBlock Text="Shock spring" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF"/>
+                        <toolkit:ListPicker x:Name="shockspringPicker" FullModeHeader="Shock spring" FullModeItemTemplate="{StaticResource PickerFullModeItemTemplateShockspring}" ItemTemplate="{StaticResource PickerItemTemplateShockspring}"/>
+                        <TextBlock x:Name="rideheightrearend" TextWrapping="Wrap" Text="Ride height" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                        <TextBlock Text="{Binding Path=Value, Mode=TwoWay,StringFormat='0.0 mm', ElementName=ridehsliderrearend}" Margin="300,-21,0,0" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" x:Name="ridehDatarearend" />
+                        <Slider Name="ridehsliderrearend" Background="{StaticResource PhoneAccentBrush}" Maximum="10" Minimum="0" SmallChange="0.1" />
+                        <TextBlock Text="Springs on damper" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF"/>
+                        <TextBox x:Name="SOD"/>
+                        <TextBlock TextWrapping="Wrap" Text="Rear droop" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                        <TextBlock Text="{Binding Path=Value, Mode=TwoWay,StringFormat='0.0 mm', ElementName=reardroopslider}" Margin="300,-21,0,0" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" x:Name="ReardroopData" />
+                        <Slider Name="reardroopslider" Background="{StaticResource PhoneAccentBrush}" Maximum="10" Minimum="0" SmallChange="0.5" />
+                    </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+			</controls:PivotItem>
+			<controls:PivotItem x:Name="reartires">
+				<controls:PivotItem.Header>
+                    <TextBlock Text="Rear tires" Foreground="{StaticResource PhoneAccentBrush}" FontSize="50" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Margin="2,28,12,0"/>
+				</controls:PivotItem.Header>
+                <Grid>
+                    <ScrollViewer>
+                        <StackPanel>
+                            <TextBlock Height="24" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Text="Brand &amp; Comp" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                            <toolkit:ListPicker x:Name="BrandCompPickerRear" CacheMode="BitmapCache" FullModeHeader="Brand &amp; Comp" FullModeItemTemplate="{StaticResource PickerFullModeItemTemplateBrandComp}" ItemTemplate="{StaticResource PickerItemTemplateBrandComp}" Height="73"/>
+                            <TextBlock Height="24" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Text="Diameter" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                            <TextBlock x:Name="DiaRear" Text="{Binding Path=Value, Mode=TwoWay,StringFormat='0.0 mm', ElementName=sliderRear}" Margin="300,-25,0,0"/>
+                            <Slider Name="sliderRear" Background="{StaticResource PhoneAccentBrush}" Maximum="48" SmallChange="0.5" Minimum="42" />
+                            <TextBlock Text="Tire Treatment" Foreground="{StaticResource PhoneAccentBrush}" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Height="24"/>
+                            <TextBlock Text="Time" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Height="24"/>
+                            <toolkit:ListPicker x:Name="tireTimePickerrear" FullModeHeader="Time" FullModeItemTemplate="{StaticResource PickerFullModeItemTemplateTime}" ItemTemplate="{StaticResource PickerItemTemplateTime}"/>
+                            <TextBlock Text="Product brand" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Height="24"/>
+                            <TextBox x:Name="productbrandrear"/>
+                            <TextBlock Text="Surface" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Height="24"/>
+                            <Slider x:Name="Surfacerear" Background="{StaticResource PhoneAccentBrush}"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                    </Grid>
+			</controls:PivotItem>
+			<controls:PivotItem x:Name="electronics">
+				<controls:PivotItem.Header>
+                    <TextBlock Text="Electronics" Foreground="{StaticResource PhoneAccentBrush}" FontSize="50" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Margin="2,28,12,0"/>
+				</controls:PivotItem.Header>
+                <Grid>
+                    <ScrollViewer Margin="0,0,0,70">
+                    <StackPanel>
+                            <TextBlock Text="ESC" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <TextBox x:Name="ESC"/>
+                            <TextBlock Text="ESC FW Ver" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <TextBox x:Name="ESCfw" InputScope="Number"/>
+                            <TextBlock Text="ESC setup" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <TextBox x:Name="ESCsetup"/>
+                            <TextBlock Text="Motor" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <TextBox x:Name="Motor"/>
+                            <TextBlock Text="Rollout" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <TextBox x:Name="Rollout" InputScope="Number"/>
+                            <TextBlock Text="Receiver" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <TextBox x:Name="Receiver"/>
+                            <TextBlock Text="Servo" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <TextBox x:Name="Servo"/>
+                            <TextBlock Text="Battery" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <TextBox x:Name="Battery"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+			</controls:PivotItem>
+			<controls:PivotItem x:Name="comments">
+				<controls:PivotItem.Header>
+					<TextBlock Text="Micsellaneous" Foreground="{StaticResource PhoneAccentBrush}" FontSize="50" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Margin="2,28,12,0"/>
+				</controls:PivotItem.Header>
+				<Grid>
+                    <ScrollViewer Margin="0,0,0,71">
+                        <StackPanel>
+					<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Track Condition" VerticalAlignment="Top" Margin="0,6,0,0" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF">
+						<TextBlock.Foreground>
+							<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+						</TextBlock.Foreground>
+					</TextBlock>
+
+                            <toolkit:ListPicker x:Name="TCsurface" VerticalAlignment="Top" ItemTemplate="{StaticResource PickerItemTC}">
+                                <toolkit:ListPicker.Header>
+                                    <TextBlock Text="Surface" Foreground="White" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                                </toolkit:ListPicker.Header>
+                            </toolkit:ListPicker>
+                            <toolkit:ListPicker x:Name="TCtraction" VerticalAlignment="Top" ItemTemplate="{StaticResource PickerItemTC2}">
+                                <toolkit:ListPicker.Header>
+                                    <TextBlock Text="Traction" Foreground="White" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF"/>
+                                </toolkit:ListPicker.Header>
+                            </toolkit:ListPicker>
+                            <toolkit:ListPicker x:Name="TCcomp" VerticalAlignment="Top" ItemTemplate="{StaticResource PickerItemTC3}" >
+                                <toolkit:ListPicker.Header>
+                                    <TextBlock Text="Composition" Foreground="White" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF"/>
+                                </toolkit:ListPicker.Header>
+                            </toolkit:ListPicker>
+
+                            <TextBlock Text="Qualifying" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <TextBox x:Name="qualifying" InputScope="Number"/>
+                            <TextBlock HorizontalAlignment="Left" Text="Finish" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF"  />
+                            <TextBox x:Name="finish" InputScope="Number"/>
+                            <TextBlock HorizontalAlignment="Left" Text="Chassi" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" />
+                            <TextBox x:Name="RCchassi"/>
+                            <TextBlock HorizontalAlignment="Left" Text="Weight" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF"/>
+                            <TextBox x:Name="RCweight"/>
+                            <TextBlock HorizontalAlignment="Left" Text="Body" VerticalAlignment="Top" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF"/>
+                            <TextBox x:Name="RCbody"/>
+                                                       
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+			</controls:PivotItem>
+            
+            <controls:PivotItem>
+                <controls:PivotItem.Header>
+                    <TextBlock Text="Comments" Foreground="{StaticResource PhoneAccentBrush}" FontSize="50" FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Margin="2,28,12,0"/>
+                </controls:PivotItem.Header>
+                <Grid>
+                    <StackPanel>
+                    <TextBox x:Name="comment" TextWrapping="Wrap" VerticalAlignment="Top" Height="200"/>
+                        <TextBlock FontFamily="/RCmechanics;component/Fonts/Fonts.zip#Gotham HTF" Text="comments can save lifes" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Grid>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Default" Opacity="1.0" BackgroundColor="{StaticResource PhoneAccentColor}" >
+
+            <shell:ApplicationBarIconButton IconUri="/icons/appbar.save.rest.png"  Text="done" Click="ApplicationBarIconButton_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/icons/appbar.cancel.rest.png" Text="cancel" Click="ApplicationBarIconButton2_Click"/>
+
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>
